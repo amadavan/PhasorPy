@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 setup(
     name='phasorpy',
     version='0.1.0',
-    packages=['phasor'],
+    packages=['phasorpy'],
     package_dir={'phasorpy': 'phasor'},
-    package_data={'phasorpy': ['phasor/data/*.m']},
+    package_data={'phasorpy': ['data/*.m']},
     author='Avinash Madavan',
     author_email='avinash.madavan@gmail.com',
     description='A python library for solving economic dispatch problems for MATPOWER case files.',

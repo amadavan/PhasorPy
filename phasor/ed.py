@@ -3,14 +3,14 @@ import scipy as sp
 import scipy.sparse
 import stukapy as st
 
-import phasor.network
+from . import network as phasorNetwork
 
 __all__ = ['EconomicDispatch']
 
 class EconomicDispatch:
     def __init__(self, network):
-        if type(network) is not phasor.network.PowerNetwork:
-            raise ValueError('Invalid network type. (Required: phasor.network.PowerNetwork; Provided: %s)' % type(network))
+        if type(network) is not phasorNetwork.PowerNetwork:
+            raise ValueError('Invalid network type. (Required: phasorpy.network.PowerNetwork; Provided: %s)' % type(network))
 
         self.network = network
 

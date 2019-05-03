@@ -211,9 +211,9 @@ def load_case(mfile, verbose=0):
         if verbose: print("Downloading case file: %s." % (mfile))
         response = requests.get(mfile)
         lines = response.text.split('\n')
-    elif pkg_resources.resource_exists('phasor', 'data/' + mfile):
+    elif pkg_resources.resource_exists('phasorpy', 'data/' + mfile):
         if verbose: print("Loading case file: %s." % (mfile))
-        with pkg_resources.resource_stream('phasor', 'data/' + mfile) as f:
+        with pkg_resources.resource_stream('phasorpy', 'data/' + mfile) as f:
             lines = [str(l, 'utf-8') for l in f.readlines()]
     else:
         if verbose: print("Reading case file: %s." % (mfile))
@@ -248,3 +248,6 @@ def load_case(mfile, verbose=0):
                              'gen': str_to_array(gen_str),
                              'gencost': str_to_array(gencost_str),
                              'branch': str_to_array(branch_str)})
+
+def available_cases():
+    return pkg_resources.resource_listdir('phasorpy', 'data')

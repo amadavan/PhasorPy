@@ -1,14 +1,14 @@
 import stukapy as st
 
-import phasor.network
+from . import network as phasorNetwork
 from . import _psced, _csced, _rsced
 
 __all__ = ['PSCED', 'CSCED', 'RSCED']
 
 class SCED:
     def __init__(self, network):
-        if type(network) is not phasor.network.PowerNetwork:
-            raise ValueError('Invalid network type. (Required: phasor.network.PowerNetwork; Provided: %s)' % type(network))
+        if type(network) is not phasorNetwork.PowerNetwork:
+            raise ValueError('Invalid network type. (Required: phasorpy.network.PowerNetwork; Provided: %s)' % type(network))
 
         self.network = network
 
