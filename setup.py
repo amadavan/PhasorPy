@@ -17,5 +17,4 @@ setup(
         'scipy>=1.0.0'
     ],
     license='MIT',
-    include_package_data=True
 )
